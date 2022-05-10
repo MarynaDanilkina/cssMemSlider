@@ -8,18 +8,16 @@ input[name="slider"] {
 }
 
 .conteiner {
-  margin: 2% auto 1rem;
+  margin: 1% auto 1rem;
   display: flex;
   flex-direction: column;
-  width: 30%;
-  height: auto;
-
+  width: 95%;
+  overflow: hidden;
 }
 
 .img__container {
   display: flex;
-  width: 600%;
-  height: 70%;
+  width: 400%;
 }
 
 .slide__img {
@@ -27,51 +25,80 @@ input[name="slider"] {
   transition: all .6s ease;
 }
 
+.slide__img img {
+  width: 100%;
+}
+
 .about {
+  margin-top: 2rem;
   display: flex;
 }
 
 .label__container {
   display: flex;
   justify-content: end;
+  width: 30%;
 }
 
 .about-mem__container {
   display: flex;
   font-size: 1rem;
-
+  width: 70%;
 }
 
 .bar {
-  height: 0.5rem;
-  width: 0.5rem;
+  height: 0.8rem;
+  width: 0.8rem;
   background-color: rgb(99, 202, 227);
   border-radius: 50%;
-  border: 0.5rem solid rgb(41, 43, 44);
-  ;
+  border: 0.7rem solid rgb(41, 43, 44);
 }
 
 .bar:hover {
   opacity: 1;
   cursor: pointer;
+  background-color: rgb(231, 238, 239);
 }
 
-.bar:active {
-  background-color: rgb(183, 188, 219);
+
+.mems {
+  opacity: 0;
+  width: 25%;
 }
 
-#trigger1:checked~.conteiner .img__container .s1 {
+#trigger1:checked~.conteiner .img__container .s1,
+#trigger1:checked~.conteiner .about .about-mem__container .mem1 {
   margin-left: 0%;
 }
 
-#trigger2:checked~.conteiner .img__container .s1 {
+#trigger2:checked~.conteiner .img__container .s1,
+#trigger2:checked~.conteiner .about .about-mem__container .mem1 {
   margin-left: -25%;
 }
 
-#trigger3:checked~.conteiner .img__container .s1 {
+#trigger3:checked~.conteiner .img__container .s1,
+#trigger3:checked~.conteiner .about .about-mem__container .mem1 {
   margin-left: -50%;
 }
 
-#trigger4:checked~.conteiner .img__container .s1 {
+#trigger4:checked~.conteiner .img__container .s1,
+#trigger4:checked~.conteiner .about .about-mem__container .mem1 {
   margin-left: -75%;
+}
+
+#trigger1:checked~.conteiner .about .about-mem__container .mem1,
+#trigger2:checked~.conteiner .about .about-mem__container .mem2,
+#trigger3:checked~.conteiner .about .about-mem__container .mem3,
+#trigger4:checked~.conteiner .about .about-mem__container .mem4 {
+  opacity: 1;
+}
+
+#trigger1:checked~.conteiner .about .label__container .b1,
+#trigger2:checked~.conteiner .about .label__container .b2,
+#trigger3:checked~.conteiner .about .label__container .b3,
+#trigger4:checked~.conteiner .about .label__container .b4 {
+  cursor: unset;
+  background-color: rgb(41, 43, 44);
+  border: 0.1rem solid rgb(99, 202, 227);
+  margin-top: 0.6rem;
 }
