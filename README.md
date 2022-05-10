@@ -1,1 +1,1 @@
-# cssMemSlider
+https://marynadanilkina.github.io/cssMemSlider/cssMemSlider/index.html
