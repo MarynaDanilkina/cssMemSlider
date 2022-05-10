@@ -1,0 +1,77 @@
+body {
+  background-color: rgb(41, 43, 44);
+  color: aliceblue;
+}
+
+input[name="slider"] {
+  visibility: hidden;
+}
+
+.conteiner {
+  margin: 2% auto 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: auto;
+
+}
+
+.img__container {
+  display: flex;
+  width: 600%;
+  height: 70%;
+}
+
+.slide__img {
+  width: 25%;
+  transition: all .6s ease;
+}
+
+.about {
+  display: flex;
+}
+
+.label__container {
+  display: flex;
+  justify-content: end;
+}
+
+.about-mem__container {
+  display: flex;
+  font-size: 1rem;
+
+}
+
+.bar {
+  height: 0.5rem;
+  width: 0.5rem;
+  background-color: rgb(99, 202, 227);
+  border-radius: 50%;
+  border: 0.5rem solid rgb(41, 43, 44);
+  ;
+}
+
+.bar:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.bar:active {
+  background-color: rgb(183, 188, 219);
+}
+
+#trigger1:checked~.conteiner .img__container .s1 {
+  margin-left: 0%;
+}
+
+#trigger2:checked~.conteiner .img__container .s1 {
+  margin-left: -25%;
+}
+
+#trigger3:checked~.conteiner .img__container .s1 {
+  margin-left: -50%;
+}
+
+#trigger4:checked~.conteiner .img__container .s1 {
+  margin-left: -75%;
+}
