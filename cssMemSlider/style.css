@@ -7,11 +7,11 @@ input[name="slider"] {
   visibility: hidden;
 }
 
-.conteiner {
-  margin: 1% auto 1rem;
+.container {
+  margin: 6% auto 1rem;
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 70%;
   overflow: hidden;
 }
 
@@ -22,7 +22,7 @@ input[name="slider"] {
 
 .slide__img {
   width: 25%;
-  transition: all .6s ease;
+  transition: all 3s ease;
 }
 
 .slide__img img {
@@ -46,59 +46,113 @@ input[name="slider"] {
   width: 70%;
 }
 
-.bar {
-  height: 0.8rem;
-  width: 0.8rem;
+.label__button {
+  height: 0.9rem;
+  width: 0.9rem;
   background-color: rgb(99, 202, 227);
   border-radius: 50%;
-  border: 0.7rem solid rgb(41, 43, 44);
+}
+
+.bar:hover .label__button {
+  background-color: rgb(201, 225, 231);
+}
+
+.bar:focus .label__button {
+  background-color: rgb(201, 225, 231);
+}
+
+.bar:active .label__button {
+  background-color: rgb(201, 225, 231);
+}
+
+.bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
 }
 
 .bar:hover {
-  opacity: 1;
   cursor: pointer;
-  background-color: rgb(231, 238, 239);
 }
-
 
 .mems {
   opacity: 0;
   width: 25%;
+  transition: all 3s ease;
+  font-size: 1rem;
 }
 
-#trigger1:checked~.conteiner .img__container .s1,
-#trigger1:checked~.conteiner .about .about-mem__container .mem1 {
+#trigger1:checked~.container .img__container .s1,
+#trigger1:checked~.container .about .about-mem__container .mem1 {
   margin-left: 0%;
 }
 
-#trigger2:checked~.conteiner .img__container .s1,
-#trigger2:checked~.conteiner .about .about-mem__container .mem1 {
+#trigger2:checked~.container .img__container .s1,
+#trigger2:checked~.container .about .about-mem__container .mem1 {
   margin-left: -25%;
 }
 
-#trigger3:checked~.conteiner .img__container .s1,
-#trigger3:checked~.conteiner .about .about-mem__container .mem1 {
+#trigger3:checked~.container .img__container .s1,
+#trigger3:checked~.container .about .about-mem__container .mem1 {
   margin-left: -50%;
 }
 
-#trigger4:checked~.conteiner .img__container .s1,
-#trigger4:checked~.conteiner .about .about-mem__container .mem1 {
+#trigger4:checked~.container .img__container .s1,
+#trigger4:checked~.container .about .about-mem__container .mem1 {
   margin-left: -75%;
 }
 
-#trigger1:checked~.conteiner .about .about-mem__container .mem1,
-#trigger2:checked~.conteiner .about .about-mem__container .mem2,
-#trigger3:checked~.conteiner .about .about-mem__container .mem3,
-#trigger4:checked~.conteiner .about .about-mem__container .mem4 {
+#trigger1:checked~.container .about .about-mem__container .mem1,
+#trigger2:checked~.container .about .about-mem__container .mem2,
+#trigger3:checked~.container .about .about-mem__container .mem3,
+#trigger4:checked~.container .about .about-mem__container .mem4 {
   opacity: 1;
 }
 
-#trigger1:checked~.conteiner .about .label__container .b1,
-#trigger2:checked~.conteiner .about .label__container .b2,
-#trigger3:checked~.conteiner .about .label__container .b3,
-#trigger4:checked~.conteiner .about .label__container .b4 {
-  cursor: unset;
+#trigger1:checked~.container .about .label__container .bar .button1,
+#trigger2:checked~.container .about .label__container .bar .button2,
+#trigger3:checked~.container .about .label__container .bar .button3,
+#trigger4:checked~.container .about .label__container .bar .button4 {
   background-color: rgb(41, 43, 44);
+  height: 0.8rem;
+  width: 0.8rem;
   border: 0.1rem solid rgb(99, 202, 227);
-  margin-top: 0.6rem;
+}
+
+#trigger1:checked~.container .about .label__container .bar:hover .button1,
+#trigger2:checked~.container .about .label__container .bar:hover .button2,
+#trigger3:checked~.container .about .label__container .bar:hover .button3,
+#trigger4:checked~.container .about .label__container .bar:hover .button4 {
+  border: 0.1rem solid rgb(201, 225, 231);
+}
+
+@media screen and (max-width: 1000px) {
+  .bar {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    flex-direction: column-reverse;
+  }
+
+  .about {
+    margin-top: 0rem;
+  }
+
+  .about-mem__container {
+    width: 300%;
+    font-size: 2rem;
+  }
+
+  .label__container {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    justify-content: center;
+  }
 }
